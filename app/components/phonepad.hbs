@@ -1,0 +1,10 @@
+<div class="phonepad">
+  <h3>Phone Keypad</h3>
+  <input type="text" value={{this.inputValue}} readonly class="textbox"/>
+  <div class="keypad">
+    {{#each this.keys as |key|}}
+      <button type="button" {{on "click" (fn this.handleKeyPress key)}}>{{key}}</button>
+    {{/each}}
+  </div>
+  <button class="call-button" type="button" {{on "click" this.makeCall}}>Call</button>
+</div>

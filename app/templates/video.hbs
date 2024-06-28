@@ -1,0 +1,17 @@
+<div class="content">
+  <div class="transcription-header">
+    <h3>Real-time transcription</h3>
+    
+  <div class="transcription-panel">
+    <div id="transcription">{{this.transcription}}</div>
+  </div>
+  <p>This is the text that is generated after recording the audio.</p>
+  </div>
+  <div class="video-panel">
+    <img src="/images/AudioImage.png" alt="Audio Recorder" class="audio-recorder-icon"> 
+    <button type="button" {{on "click" this.startRecording}}>Record</button>
+    <button type="button" {{on "click" this.stopRecording}}>Stop</button>
+    <audio id="audioPlayback" controls></audio>
+  </div>
+  <Phonepad />
+</div>

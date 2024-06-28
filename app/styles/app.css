@@ -1,0 +1,228 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background: #333;
+  color: white;
+  padding: 1rem;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; 
+}
+
+main {
+  flex-grow: 1;
+  padding: 1rem;
+  display: flex;
+  justify-content: center; 
+}
+
+.phonepad {
+  width: 150px;
+  background: #f4f4f4;
+  padding: 1rem;
+  border-left: 1px solid #ddd;
+  text-align: center; 
+}
+
+.phonepad h3 {
+  text-align: center;
+}
+
+.textbox {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin-bottom: 10px; 
+}
+
+.keypad button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.keypad button:hover {
+  background: #555;
+}
+
+.call-button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.call-button:hover {
+  background: #45a049;
+}
+
+.footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.video-panel {
+  flex: 1; 
+  margin-bottom: 20px; 
+  text-align: center;
+}
+
+.transcription-panel {
+  flex: 1; 
+  padding: 10px;
+  background-color: #f0efed; 
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  overflow-y: auto;
+  min-height: 150px; 
+  margin: 10px; 
+  width: calc(100% - 60px); 
+}
+
+.audio-recorder-icon {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.transcription-header {
+  margin-bottom: 10px; 
+  text-align: center; 
+}
+
+.transcription-header h3 {
+  margin-bottom: 5px; 
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    justify-content: center; 
+    align-items: flex-start; 
+  }
+
+  .video-container {
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px;
+    width: auto;
+  }
+
+  .video-panel {
+    order: 2; 
+    margin: 0 20px; 
+    text-align: center; 
+  }
+
+  .audio-recorder-icon {
+    margin: 0 auto 10px auto; 
+  }
+
+  .transcription-panel {
+    order: 1; 
+    margin-left: 10px; 
+    margin-right: 0; 
+    margin-top: 0; 
+    width: auto; 
+  }
+
+  .phonepad {
+    order: 3; 
+    margin-left: 20px; 
+  }
+}
+
+.instruction-panel {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.instruction-panel h2 {
+  margin-bottom: 15px;
+}
+
+.instruction-panel ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.instruction-panel li {
+  margin-bottom: 10px;
+}
+
+
+.instruction-panel li {
+  margin-bottom: 10px;
+}
+
