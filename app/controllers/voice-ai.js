@@ -17,7 +17,7 @@ export default class VoiceAiController extends Controller {
   @action
   async startRecording() {
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      alert('Tu navegador no soporta la grabación de audio.');
+      alert('Your browser does not support audio recording.');
       return;
     }
 
@@ -32,7 +32,7 @@ export default class VoiceAiController extends Controller {
 
       this.mediaRecorder.onstop = this.handleRecordingStop.bind(this);
     } catch (error) {
-      console.error('Error al acceder al micrófono', error);
+      console.error('Error accessing microphone', error);
     }
   }
 
@@ -75,9 +75,9 @@ export default class VoiceAiController extends Controller {
 
       const data = await response.json();
       this.transcription = data.transcription;
-      console.log('Transcripción:', data.transcription);
+      console.log('Transcription:', data.transcription);
     } catch (error) {
-      console.error('Error transcribiendo el audio:', error);
+      console.error('Error transcribing the audio:', error);
     }
   }
 }

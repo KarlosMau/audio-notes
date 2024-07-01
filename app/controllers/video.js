@@ -14,7 +14,7 @@ export default class VideoController extends Controller {
   @action
   async startRecording() {
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      alert('Tu navegador no soporta la grabación de audio.');
+      alert('Your browser does not support audio recording.');
       return;
     }
 
@@ -29,7 +29,7 @@ export default class VideoController extends Controller {
 
       this.mediaRecorder.onstop = this.handleRecordingStop.bind(this);
     } catch (error) {
-      console.error('Error al acceder al micrófono', error);
+      console.error('Error accessing microphone', error);
     }
   }
 
@@ -71,7 +71,7 @@ export default class VideoController extends Controller {
       const recognition = new SpeechRecognition();
       recognition.continuous = false;
       recognition.interimResults = false;
-      recognition.lang = 'en-US,es-ES';
+      recognition.lang = 'en-US';
 
       recognition.onresult = (event) => {
         let finalTranscript = '';
@@ -83,7 +83,7 @@ export default class VideoController extends Controller {
         }
 
         this.transcription = finalTranscript;
-        console.log('Transcripción:', finalTranscript);
+        console.log('Transcription:', finalTranscript);
       };
 
       recognition.onerror = (event) => {
