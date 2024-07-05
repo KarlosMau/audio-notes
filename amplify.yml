@@ -1,19 +1,16 @@
 version: 1
-applications:
-  - appRoot: audio-notes # Ajusta según sea necesario
-    frontend:
-      phases:
-        preBuild:
-          commands:
-            - cd audio-notes
-            - docker build -t my-ember-app .  # Construye la imagen Docker
-        build:
-          commands:
-            - docker run --rm -v $(pwd)/audio-notes/dist:/output my-ember-app # Ejecuta el contenedor y extrae la salida de la construcción
-      artifacts:
-        baseDirectory: audio-notes/dist
-        files:
-          - '**/*'
-      cache:
-        paths:
-          - audio-notes/node_modules/**/*
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - docker build -t my-ember-app .  # Construye la imagen Docker
+    build:
+      commands:
+        - docker run --rm -v $(pwd)/dist:/output my-ember-app # Ejecuta el contenedor y extrae la salida de la construcción
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
