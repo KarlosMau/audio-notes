@@ -8,7 +8,7 @@ applications:
             - npm install
         build:
           commands:
-            - ember build --environment=production
+            - ember build --environment=production --output-path=dist --disable-minify --silent
       artifacts:
         baseDirectory: dist
         files:
@@ -16,4 +16,3 @@ applications:
       cache:
         paths:
           - node_modules/**/*
-
